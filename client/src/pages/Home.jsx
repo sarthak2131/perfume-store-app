@@ -21,7 +21,6 @@ const Home = () => {
         setLoading(false);
       }
     };
-
     fetchPerfumes();
   }, []);
 
@@ -31,15 +30,20 @@ const Home = () => {
   );
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Explore Perfumes</h2>
+    <div className="px-4 py-8 bg-white dark:bg-[#0f0f0f] text-black dark:text-white min-h-screen transition-colors duration-300">
+      <h2 className="text-4xl font-bold mb-6 text-center text-[#d1a954] drop-shadow-sm">
+        🧔 Explore Our Signature Perfume Collection
+      </h2>
+
       <Filters {...{ search, setSearch, category, setCategory }} />
+
       {loading ? (
         <Spinner />
       ) : (
-        <div className="flex flex-wrap gap-4">
-          {filtered.map(p => <ProductCard key={p._id} perfume={p} />)}
-        </div>
+    <div className="flex flex-wrap justify-center gap-6 mt-4">
+  {filtered.map(p => <ProductCard key={p._id} perfume={p} />)}
+</div>
+
       )}
     </div>
   );

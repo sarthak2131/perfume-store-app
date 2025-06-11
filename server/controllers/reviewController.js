@@ -1,6 +1,6 @@
 const Review = require('../models/review');
 
-// GET reviews for a specific perfume
+
 exports.getReviewsByPerfumeId = async (req, res) => {
   try {
     const reviews = await Review.find({ perfumeId: req.params.id });
@@ -10,7 +10,7 @@ exports.getReviewsByPerfumeId = async (req, res) => {
   }
 };
 
-// POST a new review
+
 exports.createReview = async (req, res) => {
   try {
     const review = new Review({
